@@ -3,58 +3,62 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Novo</h2>
 
-@using (Html.BeginForm())
-{
-    @Html.ValidationSummary(true)
-    <fieldset>
-        <legend>Jogador</legend>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Nome)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Nome)
-            @Html.ValidationMessageFor(model => model.Nome)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Posicao)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Posicao)
-            @Html.ValidationMessageFor(model => model.Posicao)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Nascimento)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Nascimento)
-            @Html.ValidationMessageFor(model => model.Nascimento)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Altura)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Altura)
-            @Html.ValidationMessageFor(model => model.Altura)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.SelecaoId)
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("SelecaoId", String.Empty)
-            @Html.ValidationMessageFor(model => model.SelecaoId)
-        </div>
-        <p>
-            <input type="submit" value="Create" />
-        </p>
+<section class="container" style="margin-top: 50px">
+    <div class="row">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <fieldset>
+                <legend>Jogador</legend>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Nome)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Nome)
+                    @Html.ValidationMessageFor(model => model.Nome)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Posicao)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Posicao)
+                    @Html.ValidationMessageFor(model => model.Posicao)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Nascimento)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Nascimento)
+                    @Html.ValidationMessageFor(model => model.Nascimento)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Altura)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Altura)
+                    @Html.ValidationMessageFor(model => model.Altura)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.SelecaoId)
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownList("SelecaoId", String.Empty)
+                    @Html.ValidationMessageFor(model => model.SelecaoId)
+                </div>
+                <p>
+                    <input type="submit" class="btn-primary" value="Create" />
+                </p>
 
-    </fieldset>
-}
-<div>
-    @Html.ActionLink("Listagem de Jogadores", "Index")
+            </fieldset>
+        }
+        <div>
+            @Html.ActionLink("Listagem de Jogadores", "Index")
+        </div>
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+
 </div>
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
-
+</section>

@@ -3,28 +3,31 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Remoção de Seleção</h2>
 <h3>Você tem certeza que deseja remover esta seleção?</h3>
-<fieldset>
-    <legend>Selecao</legend>
 
-    <div class="display-label">
-        @Html.DisplayNameFor(model => model.Pais)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Pais)
-    </div>
-    <div class="display-label">
-        @Html.DisplayNameFor(model => model.Tecnico)
-    </div>  <div class="display-field">
-        @Html.DisplayFor(model => model.Tecnico)
-    </div>
-</fieldset>
+<section class="container" style="margin-top: 50px">
+    <div class="row">
+        <fieldset>
+            <legend>Selecao</legend>
 
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Pais)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Pais)
+            </div>
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Tecnico)
+            </div>  <div class="display-field">
+                @Html.DisplayFor(model => model.Tecnico)
+            </div>
+        </fieldset>
+    </div>
+</section>
 @using (Html.BeginForm())
 {
     <p>
-        <input type="submit" value="Delete" /> |
+        <input type="submit" value="Delete" class="btn-danger"/> |
         @Html.ActionLink("Listagem De Seleções", "Index")
     </p>
 }

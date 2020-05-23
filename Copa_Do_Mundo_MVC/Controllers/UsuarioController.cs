@@ -80,14 +80,14 @@ namespace Copa_Do_Mundo_MVC.Controllers
         }
 
         // GET: /Usuario/ChangePassword 
-        [Authorize]
+       // [Authorize]
         public ActionResult ChangePassword()
         {
             return View();
         }
 
         //  // POST: /Usuario/ChangePassword 
-        [Authorize]
+      //  [Authorize]
         [HttpPost]
         public ActionResult ChangePassword(ChangePasswordModel model)
         {

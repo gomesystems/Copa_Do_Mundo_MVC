@@ -1,31 +1,35 @@
 ﻿@model IEnumerable<Copa_Do_Mundo_MVC.Models.Selecao>
 @{ ViewBag.Title = "Index"; }
 
-<h2> Painel </h2> 
+<h2> Lista de seleções </h2>
 
- <p>
-    @Html.ActionLink("Novo", "Create")
+<p>
+    @Html.ActionLink("Cadastrar nova seleção", "Create")
 </p>
 
 
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Pais)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tecnico)
-        </th>
-        <th></th>
-    </tr>  @foreach (var item in Model)
-    {
-<tr>
-    <td> @Html.DisplayFor(modelItem => item.Pais) </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Tecnico)
-    </td>
-
-    <td>  @Html.ActionLink("Remover", "Delete", new { id = item.Id })  </td>
-</tr>
-    }
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">País</th>
+            <th scope="col">Técnico</th>
+            <th scope="col">Qtd Jogadores </th>
+            <th scope="col"> - </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row"> @Html.DisplayFor(modelItem => item.Id)</th>
+                <td>  @Html.DisplayFor(modelItem => item.Pais)</td>
+                <td>  @Html.DisplayFor(modelItem => item.Tecnico)</td>
+                <td> @Html.DisplayFor(modelItem => item.Jogadores)</td>
+                <td> @Html.ActionLink("Remover", "Delete", new { id = item.Id }) </td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+

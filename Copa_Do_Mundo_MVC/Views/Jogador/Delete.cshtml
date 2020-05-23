@@ -3,42 +3,49 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Remoção do Jogador</h2>
 <h3>Você tem certeza que deseja remover este jogador?</h3>
-<fieldset>
-    <legend>Jogador</legend>
-    <div class="display-label">
-        @Html.DisplayNameFor(model => model.Nome)
+<br />
+
+
+<section class="container" style="margin-top: 50px">
+    <div class="row">
+        <fieldset>
+            <legend>Jogador</legend>
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Nome)
+            </div>
+            <div class="display -field">
+                @Html.DisplayFor(model => model.Nome)
+            </div>
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Posicao)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Posicao)
+            </div>
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Nascimento)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Nascimento)
+            </div>
+            <div class="display-label">
+                @Html.DisplayNameFor(model => model.Altura) 36
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Altura)
+            </div>
+            <div class="display -label">
+                @Html.DisplayNameFor(model => model.SelecaoId)
+            </div>
+            <div class="display -field">
+                @Html.DisplayFor(model => model.SelecaoId)
+            </div>
+        </fieldset>
     </div>
-    <div class="display -field">
-        @Html.DisplayFor(model => model.Nome)
-    </div>
-    <div class="display-label">
-        @Html.DisplayNameFor(model => model.Posicao)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Posicao)
-    </div>
-    <div class="display-label">
-        @Html.DisplayNameFor(model => model.Nascimento)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Nascimento)
-    </div>
-    <div class="display-label">
-        @Html.DisplayNameFor(model => model.Altura) 36
-    </div> 
-    <div class="display-field"> 
-    @Html.DisplayFor(model => model.Altura) 
-        </div> 
-    <div class="display -label"> 
-    @Html.DisplayNameFor(model => model.SelecaoId) 
-        </div> 
-    <div class="display -field"> 
-    @Html.DisplayFor(model => model.SelecaoId) 
-        </div> 
-    </fieldset> 
- @using (Html.BeginForm())
+</section>
+
+@using (Html.BeginForm())
 {
-    <p>  <input type="submit" value="Delete" /> |  @Html.ActionLink("Listagem de Jogadores", "Index")  </p>
- }
+    <p>  <input type="submit" value="Delete" class="btn-danger"/> |  @Html.ActionLink("Listagem de Jogadores", "Index")  </p>
+}

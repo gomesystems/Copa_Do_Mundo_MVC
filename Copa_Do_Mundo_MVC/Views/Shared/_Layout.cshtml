@@ -1,56 +1,88 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+
+<html lang="pt-br">
 <head>
-    <meta charset="utf-8" />
-    <title>Copa do Mundo</title>
-    <link href="~/__TemplateIcon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/themes/base/css", "~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="Loja Virtual em ASP.NET">
+    <meta name="author" content="Elias Ribeiro">
+    <link rel="stylesheet" href="/resources/lib/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/resources/lib/caroussel/carousel.css" />
+    <link rel="stylesheet" href="/resources/lib/bootstrap-ecommerce-uikit/css/ui.css" />
+    <link rel="stylesheet" href="/resources/lib/bootstrap-ecommerce-uikit/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
 </head>
 <body>
+
     <header>
-        <div class="content -wrapper">
-            <div class="float-left">
-                <p class="site-title">
-                    <img class="logo" width="10%" height="10%" src="~/fonts/im.jpg" alt="Logo" />
-                </p>
-            </div>  
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-info">
+            <a class="navbar-brand" href="#"> Copa do mundo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <div class="float-right">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/Home"><i class="fas fa-home"></i> Início <span class="sr-only">(current)</span></a>
+                    </li>
 
-                <section id="login">  
-                    @Html.Partial("_LoginPartial")
-                </section>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-list-ul"></i> Seleções / Jogadores
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/Jogador">Jogadores</a>
+                            <a class="dropdown-item" href="/Selecao">Selecões</a>
+                            <div class="dropdown-divider"></div>
+                            <section id="login">
+                                @Html.Partial("_LoginPartial")
+                            </section>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Contato"><i class="far fa-address-book"></i> Contato </a>
+                    </li>
+                </ul>
 
-                <nav>
-                    <ul id="menu">
-                        <li>@Html.ActionLink("Selecoes", "Index", "Selecao", null, new { @class = "botao" })</li>
-                        <li> @Html.ActionLink("Jogadores", "Index", "Jogador", null, new { @class = "botao" })</li>
-                    </ul>
-                </nav>
             </div>
-        </div>
+        </nav>
     </header>
+    <br /><br /><br /><br /><br />
     <div id="body">
         @RenderSection("featured", required: false)
         <section class="content -wrapper main-content clear-fix">
             @RenderBody()
         </section>
     </div>
-    <footer>
-        <div class="content -wrapper">
-            <div class="float-left">
-                <p>&copy; @DateTime.Now.Year - Copa do Mundo</p>
-            </div>
-            <div class="float-right">
-                <ul id="social">
-                    <li><a href="#" class="facebook">Facebook </a></li>
-                    <li><a href="#" class="twitter">Twitter </a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>  @Scripts.Render("~/bundles/jquery") 
-               @RenderSection("scripts", required: false)
+
+    @*isso aqui faz funcionar o jquary do menu*@
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+
+
+    <hr class="featurette-divider">
+
+    <!-- FOOTER -->
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <footer class="container">
+        <p class="float-right"><a href="#">Voltar ao topo</a></p>
+        <p>&copy; @DateTime.Now.Year Copa do mundo, Inc. &middot; <a href="#">ST</a> &middot; <a href="#">exemplo mvc</a></p>
+    </footer>
+
+
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>

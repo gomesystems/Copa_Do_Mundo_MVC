@@ -12,14 +12,14 @@ namespace Copa_Do_Mundo_MVC.Controllers
 
         public EmailController() 
         { 
-            WebMail.SmtpServer = "XXXX"; 
+            WebMail.SmtpServer = "xxxxxxxxx"; 
             WebMail.EnableSsl = true; 
             WebMail.SmtpPort = 587; 
-            WebMail.From = "XXXXX"; 
-            WebMail.UserName = "XXXXX"; 
-            WebMail.Password = "XXXXX"; 
+            WebMail.From = "xxxxxx"; 
+            WebMail.UserName = "cxxxxxxxxxxx"; 
+            WebMail.Password = "xxxx"; 
         } 
-        // POST: /Email/Envia 
+        // 23 // POST: /Email/Envia 
         
         [HttpPost] 
         public ActionResult Envia(string mensagem) 
