@@ -1,0 +1,27 @@
+﻿@{ Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Problema no servidor</title>
+</head>
+
+    <body>
+        <h2>Desculpe , tivemos problema em nosso servidor. Volte dentro de alguns instantes.</h2>
+
+        <p>Envie uma mensagem para os administradores do sistema.</p>
+        @using (Html.BeginForm("Envia", "Email"))
+        {
+            <div class="editor-label">
+                @Html.Label("Mensagem")
+            </div> <div class="editor-field">
+                @Html.TextArea("Mensagem")
+            </div> <input type="submit" value="Enviar" />
+        }
+
+    </body>
+</html>

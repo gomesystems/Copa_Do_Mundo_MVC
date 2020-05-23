@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Copa_Do_Mundo_MVC.Models.Selecao>
+@{ ViewBag.Title = "Index"; }
+
+<h2> Painel </h2> 
+
+ <p>
+    @Html.ActionLink("Novo", "Create")
+</p>
+
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Pais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tecnico)
+        </th>
+        <th></th>
+    </tr>  @foreach (var item in Model)
+    {
+<tr>
+    <td> @Html.DisplayFor(modelItem => item.Pais) </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Tecnico)
+    </td>
+
+    <td>  @Html.ActionLink("Remover", "Delete", new { id = item.Id })  </td>
+</tr>
+    }
+</table>
